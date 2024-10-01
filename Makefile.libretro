@@ -158,6 +158,7 @@ else ifeq ($(platform), tvos-arm64)
    endif
    CC = clang -arch arm64 -isysroot $(IOSSDK)
    CXX = clang++ -arch arm64 -isysroot $(IOSSDK)
+   CFLAGS += -Wno-incompatible-function-pointer-types
 
 # QNX
 else ifeq ($(platform), qnx)
