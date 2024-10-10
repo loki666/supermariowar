@@ -112,9 +112,9 @@ else ifeq ($(platform), osx)
 
    ifeq ($(CROSS_COMPILE),1)
 		TARGET_RULE   = -target $(LIBRETRO_APPLE_PLATFORM) -isysroot $(LIBRETRO_APPLE_ISYSROOT)
-		CFLAGS   += $(TARGET_RULE)
-		CPPFLAGS += $(TARGET_RULE)
-		CXXFLAGS += $(TARGET_RULE)
+		CFLAGS   += $(TARGET_RULE) -Wno-incompatible-function-pointer-types
+		CPPFLAGS += $(TARGET_RULE) -Wno-incompatible-function-pointer-types
+		CXXFLAGS += $(TARGET_RULE) -Wno-incompatible-function-pointer-types
 		LDFLAGS  += $(TARGET_RULE)
 		MINVERSION =
    endif
