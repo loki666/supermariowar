@@ -160,6 +160,11 @@ else ifeq ($(platform), tvos-arm64)
    CC = clang -arch arm64 -isysroot $(IOSSDK)
    CXX = clang++ -arch arm64 -isysroot $(IOSSDK)
    CFLAGS += -Wno-incompatible-function-pointer-types
+   IPHONEMINVER = -mappletvos-version-min=11.0
+   LDFLAGS += $(IPHONEMINVER)
+   FLAGS += $(IPHONEMINVER)
+   CC += $(IPHONEMINVER)
+   CXX += $(IPHONEMINVER)
 
 # QNX
 else ifeq ($(platform), qnx)
